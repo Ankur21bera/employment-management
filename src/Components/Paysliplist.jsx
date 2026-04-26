@@ -1,8 +1,13 @@
 import React from 'react'
 import { format } from 'date-fns'
 import { Download } from 'lucide-react'
+import { useNavigate } from "react-router-dom";
+
 
 const Paysliplist = ({ payslips, isAdmin }) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className='card overflow-hidden'>
       <div className='overflow-x-auto'>
@@ -63,7 +68,7 @@ const Paysliplist = ({ payslips, isAdmin }) => {
                     <td className='text-center'>
                       <button
                         className='inline-flex items-center px-3 py-1.5 text-xs font-medium rounded text-blue-600 bg-blue-50 hover:bg-blue-100 transition'
-                        onClick={() => window.open(`/print/payslips/${id}`)}
+                        onClick={() => navigate(`/print/payslips/${id}`)}
                       >
                         <Download className='w-3 h-3 mr-1.5' />
                         Download
