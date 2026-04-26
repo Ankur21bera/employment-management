@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const api = axios.create({
-    baseURL:(import.meta.VITE_BASE_URL || "http://localhost:4000") + "/api"
+    baseURL:(import.meta.VITE_BASE_URL || "https://employment-backend.vercel.app") + "/api"
 })
 
 api.interceptors.request.use((config)=>{
